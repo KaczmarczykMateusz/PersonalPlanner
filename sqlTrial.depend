@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1495667171 source:e:\oop learning\sqltrial\main.cpp
+	<iostream>
+	<string>
+	<windows.h>
+	<mysql.h>
+	<sstream>
+	<limits>
+	<algorithm>
+
+1476109533 c:\program files (x86)\dev-cpp\include\mysql.h
+	<sys/types.h>
+	<winsock.h>
+	"mysql_com.h"
+	"mysql_time.h"
+	"mysql_version.h"
+	"typelib.h"
+	"my_list.h"
+	"my_alloc.h"
+
+1476109546 c:\program files (x86)\dev-cpp\include\mysql_com.h
+
+1476109572 c:\program files (x86)\dev-cpp\include\mysql_time.h
+
+1476109583 c:\program files (x86)\dev-cpp\include\mysql_version.h
+	<custom_conf.h>
+
+1476109723 c:\program files (x86)\dev-cpp\include\typelib.h
+
+1476109768 c:\program files (x86)\dev-cpp\include\my_list.h
+
+1476109777 c:\program files (x86)\dev-cpp\include\my_alloc.h
+
+1496695683 source:e:\oop learning\personal planner mysql\main.cpp
+	<iostream>
+	<string>
+	<windows.h>
+	<mysql.h>
+	<sstream>
+	<limits>
+	<algorithm>
+
