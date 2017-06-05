@@ -5,4 +5,6 @@ Database with 6 columns (id, date, time, subject, activity ,importance) created 
 
 Server created with XAMPP v3.2.2
 
-I'm planning to add functionality of searching by data range and improve delete function.
+I'm planning to add: 
+- functionality of searching by data range 
+- improve delete function --- done 06.06.2017
