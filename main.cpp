@@ -71,7 +71,6 @@ void planner::addActivity() {
             if(idAux2 >= idAux)
                 idAux = idAux2;
         }
-
     }
     else
         {
@@ -109,7 +108,6 @@ void planner::searchBySubject() {
     getline(cin, subjectChoice);
 
     qstate = mysql_query(conn,"SELECT * FROM plannertab");
-
 
       if(!qstate) {
             res = mysql_store_result(conn);
@@ -175,7 +173,7 @@ void planner::searchByImportance() {
     cin.get();
     }
 
-    // Searching by date
+// Searching by date
 void planner::searchByDate() {
      cout << "Enter date which you want to find YYYY-MM-DD: ";
     string dateChoice;
@@ -214,28 +212,27 @@ void planner::searchByDate() {
         cin.get();
 }
 
-//deleting record (only from 1-9 !)
+// Delete data
 void planner::deletedata(MYSQL* conn, int rowToDelete){
-
-    char *importance;
     char *q;
     string g= "DELETE FROM plannertab WHERE id=";
-    char aba = rowToDelete + '0';
-    string addedString;
-    addedString = g;
-    addedString.append(1, aba);
-    int lengthOfString;
-    lengthOfString=addedString.length();
 
-    char characters[lengthOfString];
-    addedString.copy( characters, lengthOfString );
+    ostringstream oss;
+    oss << rowToDelete;
+    g += oss.str();
+    int lengthOfString=g.length();
 
+    cout << "Deleted row ID: " <<rowToDelete;
 
-   for(int i=0; i<sizeof(characters)/(sizeof(characters[0])); i++)
-    cout << characters[i] << endl;
+    char characters[g.length()];
+    g.copy( characters, lengthOfString );
 
     q=characters;
     mysql_query(conn,q);
+    
+    cout << "\nPress enter to continue" << endl;
+    cin.get();
+    cin.get();
 }
 
 int main()
@@ -247,7 +244,7 @@ int main()
     while(1) {
     if(conn)
     {
-        cout<<"connected to database planner"<<endl;
+        cout<<"\nconnected to database planner"<<endl;
         cout<<"What would you like to do?"<<endl;
         cout<<"1 - Add new activity to the calendar"<<endl;
         cout<<"2 - Search for activity by it's subject name (full name)"<<endl;
