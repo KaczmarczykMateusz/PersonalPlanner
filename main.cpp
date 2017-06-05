@@ -214,22 +214,22 @@ void planner::searchByDate() {
 
 // Delete data
 void planner::deletedata(MYSQL* conn, int rowToDelete){
-    char *q;
-    string g= "DELETE FROM plannertab WHERE id=";
+    char *deleteExecute;
+    string deleteRow= "DELETE FROM plannertab WHERE id=";
 
     ostringstream oss;
     oss << rowToDelete;
-    g += oss.str();
-    int lengthOfString=g.length();
+    deleteRow += oss.str();
+    int lengthOfString=deleteRow.length();
 
     cout << "Deleted row ID: " <<rowToDelete;
 
-    char characters[g.length()];
-    g.copy( characters, lengthOfString );
+    char characters[deleteRow.length()];
+    deleteRow.copy(characters, lengthOfString);
 
-    q=characters;
-    mysql_query(conn,q);
-    
+    deleteExecute=characters;
+    mysql_query(conn, deleteExecute);
+
     cout << "\nPress enter to continue" << endl;
     cin.get();
     cin.get();
